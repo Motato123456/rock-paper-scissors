@@ -69,8 +69,7 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame(){
     
-    let humanScore = 0;
-    let computerScore = 0;
+    
     
     for (let i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();
@@ -86,7 +85,6 @@ function playGame(){
           
     }
 
-
     if (humanScore > computerScore){
         return "YOU WIN!"
     }
@@ -97,3 +95,8 @@ function playGame(){
 
 }
 console.log(playGame())
+
+const rock = document.querySelector(".roc");
+const paper = document.querySelector(".pap");
+const scissors = document.querySelector(".scissors");
+rock.addEventListener("click", playRound());
