@@ -18,18 +18,18 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice){
-        console.log( "it is a tie!");
+        results.textContent = ( "it is a tie!");
     }
     else if (humanChoice == "paper"){
         if (computerChoice == "rock"){
             
-            console.log("you win! paper beats rock");
+            results.textContent = "you win! paper beats rock";
             humanScore++;
             human.textContent = humanScore;
             
         }
         else {
-            console.log("you lose! scissors beats paper");
+            results.textContent = "you lose! scissors beats paper";
             computerScore++;
             computer.textContent = computerScore;
             
@@ -38,13 +38,13 @@ function playRound(humanChoice, computerChoice) {
     else if (humanChoice == "scissors"){
         if (computerChoice == "paper"){
            
-            console.log( "you win! scissors beats paper");
+            results.textContent = "you win! scissors beats paper";
             humanScore++;
             human.textContent = humanScore;
         }
         else {
             
-            console.log("you lose! rock beats scissors");
+            results.textContent = "you lose! rock beats scissors";
             computerScore++;
             computer.textContent = computerScore;
         }
@@ -52,13 +52,13 @@ function playRound(humanChoice, computerChoice) {
     else if (humanChoice == "rock"){
         if (computerChoice == "scissors"){
             
-            console.log("you win! rock beats scissors");
+            results.textContent = "you win! rock beats scissors";
             humanScore++;
             human.textContent = humanScore;
         }
         else {
             
-            console.log("you lose! paper beats rock");
+            results.textContent = "you lose! paper beats rock";
             computerScore++;
             computer.textContent = computerScore;
         }
@@ -90,6 +90,15 @@ rock.addEventListener("click", () => {
     const humanSelection = "rock";
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
+    if (computerScore == 5) {
+        results.textContent = "YOU LOSE OVERALL!"
+       
+    }
+    else if (humanScore == 5) {
+        results.textContent = "YOU WIN OVERALL!"
+       
+    }
+        
     
 
 });
@@ -99,6 +108,15 @@ scissors.addEventListener("click", () => {
     const humanSelection = "scissors";
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
+    if (computerScore == 5) {
+        results.textContent = "YOU LOSE OVERALL!"
+      
+    }
+    else if (humanScore == 5) {
+        results.textContent = "YOU WIN OVERALL!"
+        
+    }
+        
     
 
 });
@@ -108,9 +126,19 @@ paper.addEventListener("click", () => {
     const humanSelection = "paper";
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
+    if (computerScore == 5) {
+        results.textContent = "YOU LOSE OVERALL!"
+    
+    }
+    else if (humanScore == 5) {
+        results.textContent = "YOU WIN OVERALL!"
+        
+    }
+        
     
 
 });
+
 
 
     
